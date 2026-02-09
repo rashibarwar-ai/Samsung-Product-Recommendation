@@ -75,6 +75,13 @@ st.markdown(f"""
     justify-content: center;
     text-align: center;
 }}
+search-box input {{
+    width: 420px !important;
+    padding: 14px !important;
+    border-radius: 30px !important;
+    border: none !important;
+    font-size: 18px !important;
+}}
 
 .hero-content {{
     color: white;
@@ -103,6 +110,11 @@ st.markdown(f"""
     </div>
 </div>
 """, unsafe_allow_html=True)
+st.markdown('<div class="search-box">', unsafe_allow_html=True)
+
+st.subheader("🔎 Search Product by Description")
+query = st.text_input("", placeholder="Type what you are looking for (eg: Smart Watch,AC,Gaming Phone)")
+st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown("""
 <style>
@@ -181,8 +193,7 @@ if "show_similar" not in st.session_state:
 
 if st.session_state.page == "list":
 
-    st.subheader("🔎 Search Product by Description")
-    query = st.text_input("Type what you are looking for (eg: Smart Watch,AC,Gaming Phone)")
+   
 
     if query:
     
